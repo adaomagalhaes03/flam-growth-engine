@@ -1,9 +1,15 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { GreenButton } from "../GreenButton";
+import { ContactModal } from "../ContactModal";
 import { ArrowRight, MessageCircle, Mail, Phone, Clock } from "lucide-react";
 
 export const CTASection = () => {
+  const [isContactOpen, setIsContactOpen] = useState(false);
+
   return (
+    <>
+      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
     <section id="contacto" className="py-32 relative overflow-hidden bg-primary">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
@@ -37,7 +43,7 @@ export const CTASection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <GreenButton variant="white">
+            <GreenButton variant="white" onClick={() => setIsContactOpen(true)}>
               <MessageCircle size={20} />
               Entrar em Contacto
             </GreenButton>
@@ -74,5 +80,6 @@ export const CTASection = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };

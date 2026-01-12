@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { SectionTitle } from "../SectionTitle";
 import { GreenButton } from "../GreenButton";
+import { PlanModal } from "../PlanModal";
 import { Check, Star } from "lucide-react";
 
 const plans = [
@@ -60,7 +62,16 @@ const plans = [
 ];
 
 export const PricingSection = () => {
+  const [selectedPlan, setSelectedPlan] = useState<{ name: string; price: string } | null>(null);
+
   return (
+    <>
+      <PlanModal
+        isOpen={!!selectedPlan}
+        onClose={() => setSelectedPlan(null)}
+        planName={selectedPlan?.name || ""}
+        planPrice={selectedPlan?.price || ""}
+      />
     <section id="planos" className="py-24 relative bg-muted/30">
       <div className="container mx-auto px-4 relative z-10">
         <SectionTitle
@@ -124,6 +135,7 @@ export const PricingSection = () => {
               <GreenButton 
                 variant={plan.highlighted ? "primary" : "outline"}
                 className="w-full"
+                onClick={() => setSelectedPlan({ name: plan.name, price: plan.monthlyPrice || plan.price })}
               >
                 Escolher Plano
               </GreenButton>
@@ -144,5 +156,6 @@ export const PricingSection = () => {
         </motion.div>
       </div>
     </section>
+    </>
   );
 };
