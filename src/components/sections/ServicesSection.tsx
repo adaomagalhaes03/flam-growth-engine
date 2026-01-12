@@ -6,52 +6,59 @@ import {
   PieChart, 
   FileText, 
   ClipboardCheck, 
-  BarChart3 
+  BarChart3,
+  Leaf,
+  GraduationCap,
+  Truck
 } from "lucide-react";
 
 const services = [
   {
     icon: Calculator,
-    title: "Consultoria Contábil Online",
-    description: "Análise de custos, compliance e auditoria especializada para empresas de transporte de pessoas.",
-    features: ["Escrituração contábil", "Balancetes mensais", "Demonstrações financeiras"]
+    title: "Consultoria Contábil e Auditoria",
+    description: "Avaliação contabilística e financeira das atividades rurais com análise de riscos e relatórios especializados.",
+    features: ["Escrituração contábil", "Análise de riscos", "Relatórios especializados"]
   },
   {
     icon: PieChart,
-    title: "Gestão Financeira",
-    description: "Controle financeiro inteligente com acompanhamento em tempo real e relatórios personalizados.",
-    features: ["Fluxo de caixa", "Análise de rentabilidade", "Projeções financeiras"]
+    title: "Consultoria Financeira",
+    description: "Elaboração de planos financeiros e orçamentos personalizados para o crescimento sustentável.",
+    features: ["Gestão de custos", "Planeamento orçamental", "Fluxo de caixa"]
+  },
+  {
+    icon: Leaf,
+    title: "Consultoria Agronómica",
+    description: "Planeamento estratégico para o crescimento do agronegócio com foco em sustentabilidade.",
+    features: ["Análise de produção", "Planeamento agrícola", "Sustentabilidade"]
   },
   {
     icon: FileText,
-    title: "Planeamento Tributário",
-    description: "Otimização da carga tributária e análise de rentabilidade de rotas para maximizar resultados.",
-    features: ["Economia fiscal", "Compliance tributário", "Benefícios fiscais"]
+    title: "Planeamento Estratégico",
+    description: "Desenvolvimento de estratégias empresariais para maximizar resultados no setor rural.",
+    features: ["Estratégias de crescimento", "Análise de mercado", "Posicionamento"]
   },
   {
-    icon: ClipboardCheck,
-    title: "Auditoria Automatizada",
-    description: "Processos de auditoria digital com redução de erros e identificação proativa de problemas.",
-    features: ["Auditoria interna", "Controles internos", "Gestão de riscos"]
+    icon: Truck,
+    title: "Gestão de Frota",
+    description: "Consultoria especializada em gestão de frota para empresas de transporte rural.",
+    features: ["Controle de custos", "Manutenção preventiva", "Otimização de rotas"]
   },
   {
-    icon: BarChart3,
-    title: "Relatórios Digitais",
-    description: "Emissão rápida e precisa de relatórios financeiros com acesso em tempo real via plataforma.",
-    features: ["Dashboards interativos", "Relatórios automatizados", "KPIs personalizados"]
+    icon: GraduationCap,
+    title: "Formação e Capacitação",
+    description: "Programas de formação em gestão rural para empreendedores e equipas.",
+    features: ["Workshops", "Capacitação técnica", "Acompanhamento digital"]
   },
 ];
 
 export const ServicesSection = () => {
   return (
-    <section id="servicos" className="py-24 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-dark-lighter/50 to-background" />
-      
+    <section id="servicos" className="py-24 relative bg-muted/30">
       <div className="container mx-auto px-4 relative z-10">
         <SectionTitle
           title="Nossos Serviços"
           highlight="Serviços"
-          subtitle="Soluções completas em consultoria contábil e gestão financeira"
+          subtitle="Soluções completas em consultoria para o agronegócio"
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -60,9 +67,9 @@ export const ServicesSection = () => {
               <div className="flex flex-col h-full">
                 <motion.div 
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="w-16 h-16 rounded-2xl bg-gold-gradient flex items-center justify-center mb-6 shadow-lg"
+                  className="w-16 h-16 rounded-2xl bg-green-gradient flex items-center justify-center mb-6 shadow-lg"
                 >
-                  <service.icon className="w-8 h-8 text-primary-foreground" />
+                  <service.icon className="w-8 h-8 text-white" />
                 </motion.div>
                 
                 <h3 className="text-xl font-semibold mb-3">{service.title}</h3>

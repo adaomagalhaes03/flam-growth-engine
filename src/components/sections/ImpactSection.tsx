@@ -5,7 +5,7 @@ import { TrendingUp, Users2 } from "lucide-react";
 
 export const ImpactSection = () => {
   return (
-    <section className="py-24 relative">
+    <section className="py-24 relative bg-background">
       <div className="container mx-auto px-4">
         <SectionTitle
           title="Contributo Socioeconómico"
@@ -16,16 +16,16 @@ export const ImpactSection = () => {
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <AnimatedCard delay={0}>
             <div className="flex flex-col h-full">
-              <div className="w-16 h-16 rounded-2xl bg-gold-gradient flex items-center justify-center mb-6">
-                <TrendingUp className="w-8 h-8 text-primary-foreground" />
+              <div className="w-16 h-16 rounded-2xl bg-green-gradient flex items-center justify-center mb-6">
+                <TrendingUp className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-display font-bold mb-4">Impacto Econômico</h3>
+              <h3 className="text-2xl font-display font-bold mb-4">Impacto Económico</h3>
               <ul className="space-y-3 flex-grow">
                 {[
-                  "Redução significativa de custos operacionais para empresas",
-                  "Aumento da formalização no setor de transportes",
+                  "Redução significativa de custos operacionais para empresas rurais",
+                  "Aumento da formalização no setor agrícola",
                   "Contribuição para a arrecadação fiscal adequada",
-                  "Estímulo à digitalização empresarial",
+                  "Estímulo à digitalização empresarial no campo",
                   "Geração de empregos qualificados na área contábil",
                 ].map((item, index) => (
                   <motion.li
@@ -46,16 +46,16 @@ export const ImpactSection = () => {
 
           <AnimatedCard delay={0.1}>
             <div className="flex flex-col h-full">
-              <div className="w-16 h-16 rounded-2xl bg-gold-gradient flex items-center justify-center mb-6">
-                <Users2 className="w-8 h-8 text-primary-foreground" />
+              <div className="w-16 h-16 rounded-2xl bg-green-gradient flex items-center justify-center mb-6">
+                <Users2 className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-display font-bold mb-4">Impacto Social</h3>
               <ul className="space-y-3 flex-grow">
                 {[
                   "Democratização do acesso a serviços contábeis de qualidade",
-                  "Capacitação digital de empreendedores angolanos",
+                  "Capacitação digital de empreendedores rurais angolanos",
                   "Inclusão de empresas remotas no ecossistema formal",
-                  "Melhoria da qualidade dos serviços de transporte",
+                  "Melhoria da qualidade do agronegócio",
                   "Promoção de práticas empresariais sustentáveis",
                 ].map((item, index) => (
                   <motion.li

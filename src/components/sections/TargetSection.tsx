@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
 import { SectionTitle } from "../SectionTitle";
-import { Building, Bus, MapPin } from "lucide-react";
+import { Leaf, Building, MapPin } from "lucide-react";
 
 const targets = [
   {
-    icon: Building,
-    title: "Pequenas e Médias Empresas",
-    description: "Empresas em crescimento que precisam de estruturação contábil profissional e gestão financeira eficiente.",
+    icon: Leaf,
+    title: "Empresas Rurais",
+    description: "Empresas do agronegócio que precisam de estruturação contábil profissional e gestão financeira eficiente.",
   },
   {
-    icon: Bus,
-    title: "Empresas de Transporte de Pessoas",
-    description: "Operadores de transporte público, táxis, serviços de aluguer e turismo que necessitam de conformidade fiscal.",
+    icon: Building,
+    title: "Pequenas e Médias Empresas",
+    description: "PMEs do setor agrícola em crescimento que necessitam de consultoria estratégica e planeamento financeiro.",
   },
   {
     icon: MapPin,
@@ -22,14 +22,14 @@ const targets = [
 
 export const TargetSection = () => {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden bg-background">
       <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5" />
       
       <div className="container mx-auto px-4 relative z-10">
         <SectionTitle
           title="Público-Alvo"
           highlight="Público"
-          subtitle="Focados em quem mais precisa de excelência em gestão"
+          subtitle="Focados em quem mais precisa de excelência em gestão rural"
         />
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -44,9 +44,9 @@ export const TargetSection = () => {
             >
               <motion.div
                 whileHover={{ scale: 1.1, rotate: 5 }}
-                className="w-20 h-20 rounded-2xl bg-gold-gradient flex items-center justify-center mx-auto mb-6 shadow-lg"
+                className="w-20 h-20 rounded-2xl bg-green-gradient flex items-center justify-center mx-auto mb-6 shadow-lg"
               >
-                <target.icon className="w-10 h-10 text-primary-foreground" />
+                <target.icon className="w-10 h-10 text-white" />
               </motion.div>
               <h3 className="text-xl font-semibold mb-3">{target.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{target.description}</p>

@@ -1,29 +1,15 @@
 import { motion } from "framer-motion";
-import { GoldButton } from "../GoldButton";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { GreenButton } from "../GreenButton";
+import { ArrowRight, MessageCircle, Mail, Phone, Clock } from "lucide-react";
 
 export const CTASection = () => {
   return (
-    <section id="contacto" className="py-32 relative overflow-hidden">
-      {/* Parallax Background */}
-      <div className="absolute inset-0 bg-animated-gradient" />
-      <div className="absolute inset-0">
-        <motion.div
-          animate={{ 
-            scale: [1, 1.3, 1],
-            opacity: [0.1, 0.2, 0.1]
-          }}
-          transition={{ duration: 12, repeat: Infinity }}
-          className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{ 
-            scale: [1.3, 1, 1.3],
-            opacity: [0.1, 0.15, 0.1]
-          }}
-          transition={{ duration: 15, repeat: Infinity }}
-          className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl"
-        />
+    <section id="contacto" className="py-32 relative overflow-hidden bg-primary">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }} />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -34,13 +20,13 @@ export const CTASection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
-              Transforme a Gestão do{" "}
-              <span className="text-gradient-gold">Seu Negócio</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-white">
+              Adira aos Nossos{" "}
+              <span className="underline decoration-white/30 underline-offset-8">Serviços</span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-10">
-              Dê o próximo passo rumo ao crescimento sustentável. 
-              Nossa equipe está pronta para ajudar sua empresa a alcançar novos patamares.
+            <p className="text-xl text-white/90 mb-10">
+              Com dedicação e transparência, a FLAM ajuda na otimização da gestão da sua empresa rural.
+              Crie o seu perfil e confie a gestão à FLAM.
             </p>
           </motion.div>
 
@@ -51,14 +37,14 @@ export const CTASection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <GoldButton>
+            <GreenButton variant="white">
               <MessageCircle size={20} />
               Entrar em Contacto
-            </GoldButton>
-            <GoldButton variant="outline">
+            </GreenButton>
+            <GreenButton variant="outline-white">
               Agendar Reunião
               <ArrowRight size={18} />
-            </GoldButton>
+            </GreenButton>
           </motion.div>
 
           {/* Contact Info */}
@@ -69,16 +55,21 @@ export const CTASection = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
           >
-            {[
-              { label: "Email", value: "contacto@flamconsultoria.ao" },
-              { label: "WhatsApp", value: "+244 923 456 789" },
-              { label: "Horário", value: "Seg - Sex: 8h às 18h" },
-            ].map((item) => (
-              <div key={item.label} className="text-center">
-                <p className="text-primary font-semibold mb-1">{item.label}</p>
-                <p className="text-foreground/80">{item.value}</p>
-              </div>
-            ))}
+            <div className="flex flex-col items-center gap-3 p-6 rounded-xl bg-white/10 backdrop-blur-sm">
+              <Mail className="w-6 h-6 text-white" />
+              <p className="text-white/80 font-semibold">Email</p>
+              <p className="text-white">agroconsultoria@gmail.com</p>
+            </div>
+            <div className="flex flex-col items-center gap-3 p-6 rounded-xl bg-white/10 backdrop-blur-sm">
+              <Phone className="w-6 h-6 text-white" />
+              <p className="text-white/80 font-semibold">WhatsApp</p>
+              <p className="text-white">+244 947 455 009</p>
+            </div>
+            <div className="flex flex-col items-center gap-3 p-6 rounded-xl bg-white/10 backdrop-blur-sm">
+              <Clock className="w-6 h-6 text-white" />
+              <p className="text-white/80 font-semibold">Horário</p>
+              <p className="text-white">Seg - Sex: 8h às 18h</p>
+            </div>
           </motion.div>
         </div>
       </div>

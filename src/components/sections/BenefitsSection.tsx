@@ -3,16 +3,16 @@ import { SectionTitle } from "../SectionTitle";
 import { Check, Sparkles } from "lucide-react";
 
 const advantages = [
-  "Redução de até 40% nos custos operacionais",
-  "Eliminação de multas fiscais",
+  "Redução de custos operacionais",
+  "Eliminação de erros e multas fiscais",
   "Acesso 24/7 à plataforma de gestão",
   "Relatórios automatizados em tempo real",
   "Suporte técnico especializado",
-  "Integração com sistemas bancários",
+  "Integração com sistemas financeiros",
 ];
 
 const benefits = [
-  "Mais tempo para focar no seu negócio",
+  "Mais tempo para focar no seu agronegócio",
   "Decisões baseadas em dados precisos",
   "Tranquilidade com compliance fiscal",
   "Crescimento sustentável",
@@ -22,12 +22,12 @@ const benefits = [
 
 export const BenefitsSection = () => {
   return (
-    <section className="py-24 relative">
+    <section className="py-24 relative bg-muted/30">
       <div className="container mx-auto px-4">
         <SectionTitle
           title="Vantagens e Benefícios"
           highlight="Benefícios"
-          subtitle="Descubra como a FLAM pode transformar a gestão do seu negócio"
+          subtitle="Descubra como a FLAM pode transformar a gestão do seu agronegócio"
         />
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -56,8 +56,8 @@ export const BenefitsSection = () => {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="flex items-center gap-3"
                 >
-                  <div className="w-6 h-6 rounded-full bg-gold-gradient flex items-center justify-center flex-shrink-0">
-                    <Check className="w-4 h-4 text-primary-foreground" />
+                  <div className="w-6 h-6 rounded-full bg-green-gradient flex items-center justify-center flex-shrink-0">
+                    <Check className="w-4 h-4 text-white" />
                   </div>
                   <span className="text-foreground/80">{item}</span>
                 </motion.li>
@@ -71,11 +71,11 @@ export const BenefitsSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="card-premium p-8 border-gradient-gold"
+            className="card-premium p-8 border-2 border-primary/20"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gold-gradient flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-primary-foreground" />
+              <div className="w-12 h-12 rounded-xl bg-green-gradient flex items-center justify-center">
+                <Sparkles className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-2xl font-display font-bold">Benefícios</h3>
             </div>
@@ -90,8 +90,8 @@ export const BenefitsSection = () => {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="flex items-center gap-3"
                 >
-                  <div className="w-6 h-6 rounded-full bg-gold-gradient flex items-center justify-center flex-shrink-0">
-                    <Check className="w-4 h-4 text-primary-foreground" />
+                  <div className="w-6 h-6 rounded-full bg-green-gradient flex items-center justify-center flex-shrink-0">
+                    <Check className="w-4 h-4 text-white" />
                   </div>
                   <span className="text-foreground/80">{item}</span>
                 </motion.li>
