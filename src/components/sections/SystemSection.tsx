@@ -11,12 +11,12 @@ const features = [
   },
   {
     icon: Shield,
-    title: "Controle Financeiro Inteligente",
+    title: "Controle Financeiro",
     description: "Monitore todas as operações financeiras em tempo real com dashboards personalizados."
   },
   {
     icon: Zap,
-    title: "Redução de Erros e Multas",
+    title: "Redução de Erros",
     description: "Sistema proativo que identifica e previne erros fiscais antes que se tornem multas."
   },
   {
@@ -28,26 +28,19 @@ const features = [
 
 export const SystemSection = () => {
   return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Background gradient */}
+    <section className="py-24 relative overflow-hidden bg-background">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10" />
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-1/2 -right-1/2 w-full h-full border border-primary/10 rounded-full"
-        />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <SectionTitle
-          title="Sistema SISCONTRATO"
-          highlight="SISCONTRATO"
-          subtitle="Sistema de Consultoria, Auditoria e Contabilidade"
+          title="Plataforma Digital"
+          highlight="Digital"
+          subtitle="Sistema integrado de consultoria, auditoria e contabilidade"
         />
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left - Feature Cards */}
           <div className="grid grid-cols-2 gap-4">
             {features.map((feature, index) => (
               <AnimatedCard key={feature.title} delay={index * 0.15}>
@@ -65,36 +58,35 @@ export const SystemSection = () => {
             ))}
           </div>
 
-          {/* Right - Main Feature */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="card-premium p-8 glow-gold"
+            className="card-premium p-8 glow-green"
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-2xl bg-gold-gradient flex items-center justify-center">
-                <Cpu className="w-8 h-8 text-primary-foreground" />
+              <div className="w-16 h-16 rounded-2xl bg-green-gradient flex items-center justify-center">
+                <Cpu className="w-8 h-8 text-white" />
               </div>
               <div>
-                <h3 className="text-2xl font-display font-bold">SISCONTRATO</h3>
-                <p className="text-primary">Tecnologia de Ponta</p>
+                <h3 className="text-2xl font-display font-bold">Tecnologia de Ponta</h3>
+                <p className="text-primary">Acompanhamento Digital</p>
               </div>
             </div>
 
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              O SISCONTRATO é nossa plataforma proprietária que integra todos os processos contábeis e 
-              financeiros em um único ambiente digital. Com ele, sua empresa tem acesso a:
+              Nossa plataforma digital integra todos os processos contábeis e financeiros, oferecendo 
+              relatórios de desempenho e acompanhamento em tempo real para sua empresa rural.
             </p>
 
             <ul className="space-y-3">
               {[
-                "Integração total com sistemas fiscais angolanos",
-                "Dashboard em tempo real com indicadores financeiros",
-                "Alertas automáticos de vencimentos e obrigações",
-                "Backup em nuvem com segurança bancária",
-                "Acesso multiplataforma (web e mobile)"
+                "Dashboard em tempo real com indicadores",
+                "Alertas automáticos de vencimentos",
+                "Backup em nuvem com segurança",
+                "Acesso multiplataforma (web e mobile)",
+                "Integração com sistemas fiscais angolanos"
               ].map((item, index) => (
                 <motion.li
                   key={index}

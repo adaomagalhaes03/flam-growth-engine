@@ -19,7 +19,7 @@ export const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 glass border-b border-primary/10"
+      className="fixed top-0 left-0 right-0 z-50 glass"
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
@@ -33,16 +33,16 @@ export const Navbar = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors underline-gold"
+                className="text-foreground/80 hover:text-primary transition-colors underline-green"
               >
                 {item.label}
               </a>
             ))}
             <a
               href="#contacto"
-              className="px-6 py-2.5 bg-gold-gradient text-primary-foreground rounded-lg font-semibold hover:shadow-[0_0_20px_hsl(43,74%,49%,0.4)] transition-all"
+              className="px-6 py-2.5 bg-green-gradient text-white rounded-lg font-semibold hover:shadow-[0_0_20px_hsl(95,45%,50%,0.4)] transition-all"
             >
-              Fale Conosco
+              Fale Connosco
             </a>
           </div>
 
@@ -75,9 +75,9 @@ export const Navbar = () => {
           ))}
           <a
             href="#contacto"
-            className="px-6 py-3 bg-gold-gradient text-primary-foreground rounded-lg font-semibold text-center"
+            className="px-6 py-3 bg-green-gradient text-white rounded-lg font-semibold text-center"
           >
-            Fale Conosco
+            Fale Connosco
           </a>
         </div>
       </motion.div>

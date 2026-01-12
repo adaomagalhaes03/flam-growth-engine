@@ -6,13 +6,13 @@ const swotData = [
   {
     title: "Forças",
     icon: Shield,
-    color: "from-emerald-500/20 to-emerald-500/5",
-    borderColor: "border-emerald-500/30",
+    color: "from-primary/20 to-primary/5",
+    borderColor: "border-primary/30",
+    iconBg: "bg-primary/20",
     items: [
-      "Especialização no setor de transportes",
-      "Plataforma 100% online",
-      "5 anos de experiência consolidada",
-      "Equipe altamente qualificada",
+      "Atendimento tecnológico e inovador",
+      "Profissionais capacitados com mentalidades digitais",
+      "Contribuição na diminuição de esforço e tempo das empresas rurais",
     ],
   },
   {
@@ -20,10 +20,11 @@ const swotData = [
     icon: AlertTriangle,
     color: "from-amber-500/20 to-amber-500/5",
     borderColor: "border-amber-500/30",
+    iconBg: "bg-amber-500/20",
     items: [
-      "Dependência de conectividade",
-      "Mercado ainda em adaptação digital",
-      "Necessidade de educação do cliente",
+      "Restrição no acesso a internet de qualidade em algumas zonas",
+      "Dependência total da tecnologia",
+      "Falta de domínio tecnológico por parte de alguns profissionais",
     ],
   },
   {
@@ -31,11 +32,11 @@ const swotData = [
     icon: TrendingUp,
     color: "from-blue-500/20 to-blue-500/5",
     borderColor: "border-blue-500/30",
+    iconBg: "bg-blue-500/20",
     items: [
-      "Crescimento do setor de transportes",
-      "Digitalização acelerada pós-pandemia",
-      "Demanda por compliance fiscal",
-      "Expansão para outras regiões",
+      "Aumento do interesse das empresas em ferramentas digitais nacionais",
+      "Investimento em ferramentas online por empresas e estado",
+      "Crescimento do setor agropecuário em Angola",
     ],
   },
   {
@@ -43,17 +44,18 @@ const swotData = [
     icon: AlertCircle,
     color: "from-red-500/20 to-red-500/5",
     borderColor: "border-red-500/30",
+    iconBg: "bg-red-500/20",
     items: [
-      "Concorrência de grandes players",
-      "Mudanças na legislação fiscal",
-      "Instabilidade econômica",
+      "Concorrência crescente de consultorias com soluções digitais",
+      "Falta de infraestrutura tecnológica em zonas rurais",
+      "Resistência cultural ao digital por empresas tradicionais",
     ],
   },
 ];
 
 export const SwotSection = () => {
   return (
-    <section className="py-24 relative">
+    <section className="py-24 relative bg-background">
       <div className="container mx-auto px-4">
         <SectionTitle
           title="Análise SWOT"
@@ -72,7 +74,9 @@ export const SwotSection = () => {
               className={`rounded-2xl p-6 bg-gradient-to-br ${item.color} border ${item.borderColor} backdrop-blur-sm`}
             >
               <div className="flex items-center gap-3 mb-4">
-                <item.icon className="w-6 h-6 text-primary" />
+                <div className={`w-10 h-10 rounded-lg ${item.iconBg} flex items-center justify-center`}>
+                  <item.icon className="w-5 h-5 text-foreground" />
+                </div>
                 <h3 className="text-xl font-semibold">{item.title}</h3>
               </div>
               
@@ -86,7 +90,7 @@ export const SwotSection = () => {
                     transition={{ duration: 0.3, delay: 0.2 + i * 0.1 }}
                     className="flex items-start gap-2"
                   >
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-foreground/60 mt-2 flex-shrink-0" />
                     <span className="text-foreground/80 text-sm">{point}</span>
                   </motion.li>
                 ))}

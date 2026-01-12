@@ -1,44 +1,46 @@
-import { motion } from "framer-motion";
-import { GoldButton } from "../GoldButton";
-import { ArrowRight, ChartBar, TrendingUp } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { GreenButton } from "../GreenButton";
+import { ArrowRight, Leaf, TrendingUp } from "lucide-react";
 import logoFlam from "@/assets/logo-flam.png";
+import heroImage from "@/assets/hero-agriculture.jpg";
+import { useRef } from "react";
 
 export const HeroSection = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"]
+  });
+  
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
+
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-animated-gradient">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.15, 0.25, 0.15]
-          }}
-          transition={{ duration: 8, repeat: Infinity }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
+    <section ref={ref} id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Parallax Background Image */}
+      <motion.div 
+        className="absolute inset-0 z-0"
+        style={{ y }}
+      >
+        <img 
+          src={heroImage} 
+          alt="Agronegócio em Angola" 
+          className="w-full h-full object-cover scale-110"
         />
-        <motion.div
-          animate={{ 
-            scale: [1.2, 1, 1.2],
-            opacity: [0.15, 0.2, 0.15]
-          }}
-          transition={{ duration: 10, repeat: Infinity }}
-          className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-primary/15 rounded-full blur-3xl"
-        />
-        
-        {/* Floating geometric shapes */}
-        <motion.div
-          animate={{ y: [-20, 20, -20], rotate: [0, 180, 360] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-20 right-20 w-4 h-4 border border-primary/30 rotate-45"
-        />
-        <motion.div
-          animate={{ y: [20, -20, 20], rotate: [360, 180, 0] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-40 left-20 w-6 h-6 border border-primary/20 rounded-full"
-        />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/70 to-primary/90" />
+      </motion.div>
+
+      {/* Overlay pattern */}
+      <div className="absolute inset-0 z-[1] opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }} />
       </div>
 
-      <div className="container mx-auto px-4 pt-24 relative z-10">
+      <motion.div 
+        className="container mx-auto px-4 pt-24 relative z-10"
+        style={{ opacity }}
+      >
         <div className="max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -49,7 +51,7 @@ export const HeroSection = () => {
             <img 
               src={logoFlam} 
               alt="FLAM Consultoria" 
-              className="h-32 md:h-40 w-auto mx-auto animate-float"
+              className="h-28 md:h-36 w-auto mx-auto drop-shadow-2xl"
             />
           </motion.div>
 
@@ -57,31 +59,30 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm mb-8"
           >
-            <TrendingUp size={16} className="text-primary" />
-            <span className="text-sm text-primary">Consultoria Contábil 100% Online</span>
+            <Leaf size={16} className="text-white" />
+            <span className="text-sm text-white font-medium">Consultoria para o Agronegócio</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-4xl md:text-5xl lg:text-7xl font-display font-bold mb-6 leading-tight"
+            className="text-4xl md:text-5xl lg:text-7xl font-display font-bold mb-6 leading-tight text-white"
           >
-            Crescimento Financeiro com{" "}
-            <span className="text-gradient-gold">Estratégia</span> e{" "}
-            <span className="text-gradient-gold">Tecnologia</span>
+            Transformando Gestão em{" "}
+            <span className="text-white/90 underline decoration-white/30 underline-offset-8">Crescimento Sustentável</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-white/90 mb-10 max-w-3xl mx-auto"
           >
-            Consultoria Contábil e Gestão Financeira Online para Empresas de Transporte de Pessoas em Angola. 
-            Transforme sua gestão com soluções digitais de excelência.
+            Consultoria Contábil, Estratégica e Financeira Online para Empresas Rurais em Angola. 
+            Soluções digitais inovadoras para o desenvolvimento do agronegócio.
           </motion.p>
 
           <motion.div
@@ -90,13 +91,13 @@ export const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <GoldButton>
+            <GreenButton variant="white">
               Fale com um Consultor
               <ArrowRight size={18} />
-            </GoldButton>
-            <GoldButton variant="outline">
+            </GreenButton>
+            <GreenButton variant="outline-white">
               Conheça Nossos Serviços
-            </GoldButton>
+            </GreenButton>
           </motion.div>
 
           {/* Stats Row */}
@@ -107,9 +108,9 @@ export const HeroSection = () => {
             className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
           >
             {[
-              { value: "5+", label: "Anos de Experiência" },
-              { value: "36", label: "Profissionais" },
+              { value: "35+", label: "Profissionais" },
               { value: "100%", label: "Online" },
+              { value: "Angola", label: "Cobertura Nacional" },
               { value: "24/7", label: "Suporte" },
             ].map((stat, index) => (
               <motion.div
@@ -119,18 +120,33 @@ export const HeroSection = () => {
                 transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-3xl md:text-4xl font-display font-bold text-gradient-gold mb-2">
+                <div className="text-3xl md:text-4xl font-display font-bold text-white mb-2">
                   {stat.value}
                 </div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-sm text-white/80">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
+      
+      {/* Scroll indicator */}
+      <motion.div 
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <div className="w-6 h-10 rounded-full border-2 border-white/50 flex items-start justify-center p-2">
+          <motion.div 
+            className="w-1.5 h-3 bg-white/80 rounded-full"
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
+        </div>
+      </motion.div>
     </section>
   );
 };

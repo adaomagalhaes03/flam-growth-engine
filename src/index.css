@@ -6,80 +6,74 @@
 
 @layer base {
   :root {
-    --background: 0 0% 99%;
-    --foreground: 0 0% 12%;
+    --background: 0 0% 100%;
+    --foreground: 150 10% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 8%;
+    --card-foreground: 150 10% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 8%;
+    --popover-foreground: 150 10% 12%;
 
-    --primary: 43 74% 45%;
+    --primary: 95 40% 47%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 43 20% 95%;
-    --secondary-foreground: 0 0% 8%;
+    --secondary: 95 20% 95%;
+    --secondary-foreground: 150 10% 12%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 95 10% 96%;
+    --muted-foreground: 150 5% 45%;
 
-    --accent: 43 74% 45%;
+    --accent: 95 40% 47%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 43 20% 88%;
-    --input: 43 20% 88%;
-    --ring: 43 74% 45%;
+    --border: 95 15% 88%;
+    --input: 95 15% 88%;
+    --ring: 95 40% 47%;
 
     --radius: 0.75rem;
 
-    /* Custom tokens */
-    --gold: 43 74% 45%;
-    --gold-light: 43 74% 60%;
-    --gold-dark: 43 74% 30%;
-    --dark: 0 0% 8%;
-    --dark-lighter: 0 0% 12%;
-    --dark-card: 0 0% 98%;
+    /* Custom tokens - Green theme */
+    --green: 95 40% 47%;
+    --green-light: 95 45% 60%;
+    --green-dark: 95 45% 35%;
   }
 
   .dark {
-    --background: 0 0% 4%;
+    --background: 150 15% 8%;
     --foreground: 0 0% 95%;
 
-    --card: 0 0% 6%;
+    --card: 150 12% 10%;
     --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 6%;
+    --popover: 150 12% 10%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 43 74% 49%;
-    --primary-foreground: 0 0% 5%;
+    --primary: 95 45% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 12%;
+    --secondary: 150 10% 15%;
     --secondary-foreground: 0 0% 95%;
 
-    --muted: 0 0% 15%;
+    --muted: 150 10% 18%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 43 74% 49%;
-    --accent-foreground: 0 0% 5%;
+    --accent: 95 45% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 43 74% 49%;
+    --border: 150 10% 20%;
+    --input: 150 10% 20%;
+    --ring: 95 45% 50%;
 
-    --gold: 43 74% 49%;
-    --gold-light: 43 74% 65%;
-    --gold-dark: 43 74% 35%;
-    --dark: 0 0% 4%;
-    --dark-lighter: 0 0% 8%;
-    --dark-card: 0 0% 6%;
+    --green: 95 45% 50%;
+    --green-light: 95 50% 65%;
+    --green-dark: 95 50% 38%;
   }
 }
 
@@ -98,39 +92,35 @@
 }
 
 @layer utilities {
-  /* Gold gradient text - darker for light mode */
-  .text-gradient-gold {
+  /* Green gradient text */
+  .text-gradient-green {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(43, 74%, 40%) 0%, hsl(43, 80%, 32%) 50%, hsl(43, 74%, 25%) 100%);
+    background-image: linear-gradient(135deg, hsl(95, 45%, 50%) 0%, hsl(95, 50%, 40%) 50%, hsl(95, 45%, 30%) 100%);
   }
 
-  .dark .text-gradient-gold {
-    background-image: linear-gradient(135deg, hsl(43, 74%, 65%) 0%, hsl(43, 74%, 49%) 50%, hsl(43, 74%, 35%) 100%);
+  /* Green glow effect */
+  .glow-green {
+    box-shadow: 0 0 20px hsl(95, 45%, 50%, 0.3),
+                0 0 40px hsl(95, 45%, 50%, 0.2),
+                0 0 60px hsl(95, 45%, 50%, 0.1);
   }
 
-  /* Gold glow effect */
-  .glow-gold {
-    box-shadow: 0 0 20px hsl(43, 74%, 49%, 0.3),
-                0 0 40px hsl(43, 74%, 49%, 0.2),
-                0 0 60px hsl(43, 74%, 49%, 0.1);
+  .glow-green-sm {
+    box-shadow: 0 0 10px hsl(95, 45%, 50%, 0.2),
+                0 0 20px hsl(95, 45%, 50%, 0.1);
   }
 
-  .glow-gold-sm {
-    box-shadow: 0 0 10px hsl(43, 74%, 49%, 0.2),
-                0 0 20px hsl(43, 74%, 49%, 0.1);
+  .glow-green-hover:hover {
+    box-shadow: 0 0 30px hsl(95, 45%, 50%, 0.4),
+                0 0 60px hsl(95, 45%, 50%, 0.2);
   }
 
-  .glow-gold-hover:hover {
-    box-shadow: 0 0 30px hsl(43, 74%, 49%, 0.4),
-                0 0 60px hsl(43, 74%, 49%, 0.2);
-  }
-
-  /* Premium card styles - light mode */
+  /* Premium card styles */
   .card-premium {
     @apply relative overflow-hidden rounded-2xl;
-    background: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(43, 20%, 98%) 100%);
-    border: 1px solid hsl(43, 74%, 45%, 0.3);
-    box-shadow: 0 4px 20px hsl(43, 74%, 45%, 0.1);
+    background: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(95, 15%, 98%) 100%);
+    border: 1px solid hsl(95, 40%, 47%, 0.2);
+    box-shadow: 0 4px 20px hsl(95, 40%, 47%, 0.08);
   }
 
   .card-premium::before {
@@ -140,12 +130,12 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, hsl(43, 74%, 45%, 0.5), transparent);
+    background: linear-gradient(90deg, transparent, hsl(95, 40%, 47%, 0.4), transparent);
   }
 
   .dark .card-premium {
-    background: linear-gradient(135deg, hsl(0, 0%, 8%) 0%, hsl(0, 0%, 5%) 100%);
-    border: 1px solid hsl(43, 74%, 49%, 0.2);
+    background: linear-gradient(135deg, hsl(150, 12%, 12%) 0%, hsl(150, 12%, 8%) 100%);
+    border: 1px solid hsl(95, 45%, 50%, 0.2);
     box-shadow: none;
   }
 
@@ -155,42 +145,52 @@
     perspective: 1000px;
   }
 
-  /* Animated gradient background - light mode */
+  /* Animated gradient background */
   .bg-animated-gradient {
     background: linear-gradient(
       -45deg,
       hsl(0, 0%, 100%) 0%,
-      hsl(43, 30%, 98%) 25%,
-      hsl(43, 74%, 95%, 0.5) 50%,
-      hsl(43, 30%, 98%) 75%,
+      hsl(95, 20%, 98%) 25%,
+      hsl(95, 30%, 96%) 50%,
+      hsl(95, 20%, 98%) 75%,
       hsl(0, 0%, 100%) 100%
     );
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
   }
 
-  .dark .bg-animated-gradient {
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Hero with parallax */
+  .hero-parallax {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-parallax::before {
+    content: '';
+    position: absolute;
+    inset: 0;
     background: linear-gradient(
-      -45deg,
-      hsl(0, 0%, 4%) 0%,
-      hsl(0, 0%, 8%) 25%,
-      hsl(43, 74%, 15%, 0.3) 50%,
-      hsl(0, 0%, 8%) 75%,
-      hsl(0, 0%, 4%) 100%
+      to bottom,
+      hsl(95, 45%, 35%, 0.85) 0%,
+      hsl(95, 40%, 30%, 0.9) 100%
     );
-    background-size: 400% 400%;
+    z-index: 1;
+  }
+
+  /* Green button gradient */
+  .bg-green-gradient {
+    background: linear-gradient(135deg, hsl(95, 45%, 50%) 0%, hsl(95, 50%, 40%) 100%);
   }
 
   /* Parallax container */
   .parallax-container {
     @apply relative overflow-hidden;
-  }
-
-  /* Gold border gradient */
-  .border-gradient-gold {
-    border: 1px solid transparent;
-    background: linear-gradient(hsl(0, 0%, 6%), hsl(0, 0%, 6%)) padding-box,
-                linear-gradient(135deg, hsl(43, 74%, 49%, 0.5), hsl(43, 74%, 30%, 0.2)) border-box;
   }
 
   /* Floating animation */
@@ -214,10 +214,10 @@
 
   @keyframes pulseGlow {
     0%, 100% {
-      box-shadow: 0 0 20px hsl(43, 74%, 49%, 0.3);
+      box-shadow: 0 0 20px hsl(95, 45%, 50%, 0.3);
     }
     50% {
-      box-shadow: 0 0 40px hsl(43, 74%, 49%, 0.5);
+      box-shadow: 0 0 40px hsl(95, 45%, 50%, 0.5);
     }
   }
 
@@ -237,7 +237,7 @@
     background: linear-gradient(
       90deg,
       transparent,
-      hsl(43, 74%, 49%, 0.1),
+      hsl(95, 45%, 50%, 0.1),
       transparent
     );
     animation: shimmer 3s infinite;
@@ -255,38 +255,38 @@
   /* Section divider */
   .section-divider {
     @apply h-px w-full;
-    background: linear-gradient(90deg, transparent, hsl(43, 74%, 49%, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, hsl(95, 45%, 50%, 0.3), transparent);
   }
 
   /* Glass effect */
   .glass {
     backdrop-filter: blur(20px);
-    background: hsl(0, 0%, 100%, 0.9);
-    border-bottom: 1px solid hsl(43, 74%, 45%, 0.15);
+    background: hsl(0, 0%, 100%, 0.95);
+    border-bottom: 1px solid hsl(95, 40%, 47%, 0.15);
   }
 
   .dark .glass {
-    background: hsl(0, 0%, 6%, 0.8);
-    border-bottom: 1px solid hsl(43, 74%, 49%, 0.15);
+    background: hsl(150, 12%, 10%, 0.9);
+    border-bottom: 1px solid hsl(95, 45%, 50%, 0.15);
   }
 
-  /* Gold underline animation */
-  .underline-gold {
+  /* Green underline animation */
+  .underline-green {
     @apply relative;
   }
 
-  .underline-gold::after {
+  .underline-green::after {
     content: '';
     position: absolute;
     bottom: -4px;
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, hsl(43, 74%, 49%), hsl(43, 74%, 65%));
+    background: linear-gradient(90deg, hsl(95, 45%, 50%), hsl(95, 50%, 60%));
     transition: width 0.3s ease;
   }
 
-  .underline-gold:hover::after {
+  .underline-green:hover::after {
     width: 100%;
   }
 }
@@ -297,14 +297,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(0, 0%, 6%);
+  background: hsl(0, 0%, 95%);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(43, 74%, 49%, 0.3);
+  background: hsl(95, 45%, 50%, 0.4);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(43, 74%, 49%, 0.5);
+  background: hsl(95, 45%, 50%, 0.6);
 }

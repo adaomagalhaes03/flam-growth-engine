@@ -1,56 +1,59 @@
 import { motion } from "framer-motion";
 import { SectionTitle } from "../SectionTitle";
-import { GoldButton } from "../GoldButton";
+import { GreenButton } from "../GreenButton";
 import { Check, Star } from "lucide-react";
 
 const plans = [
   {
-    name: "Básico",
-    price: "75.000",
+    name: "Plano Essencial",
+    price: "40.000",
     currency: "Kz",
-    period: "/mês",
-    description: "Ideal para pequenas empresas em início de jornada",
+    period: "/sessão",
+    monthlyPrice: "144.000",
+    description: "Ideal para pequenas empresas rurais",
+    format: "Online",
     features: [
-      "Escrituração contábil mensal",
-      "Balancetes trimestrais",
+      "Auditoria Financeira Online",
+      "Relatórios básicos",
       "Suporte por email",
-      "Acesso à plataforma SISCONTRATO",
-      "1 usuário",
+      "Acesso à plataforma digital",
     ],
     highlighted: false,
   },
   {
-    name: "Profissional",
-    price: "150.000",
+    name: "Plano Completo",
+    price: "55.000",
     currency: "Kz",
-    period: "/mês",
-    description: "Para empresas em crescimento que precisam de mais controle",
+    period: "/sessão",
+    monthlyPrice: "198.000",
+    description: "Para empresas em crescimento",
+    format: "Presencial/Online",
     features: [
-      "Tudo do plano Básico",
-      "Balancetes mensais",
-      "Gestão de fluxo de caixa",
-      "Relatórios personalizados",
+      "Tudo do plano Essencial",
+      "Planeamento Financeiro e Orçamental",
+      "Consultoria Agronómica",
+      "Formação e Capacitação",
       "Suporte prioritário",
-      "Até 5 usuários",
       "Consultoria mensal",
     ],
     highlighted: true,
   },
   {
-    name: "Empresarial",
-    price: "300.000",
-    currency: "Kz",
-    period: "/mês",
+    name: "Plano Premium",
+    price: "Personalizado",
+    currency: "",
+    period: "",
+    monthlyPrice: "",
     description: "Solução completa para grandes operações",
+    format: "Presencial",
     features: [
-      "Tudo do plano Profissional",
+      "Tudo do plano Completo",
+      "Cartão VIP",
       "Auditoria trimestral",
-      "Planeamento tributário",
-      "Dashboard executivo",
-      "Suporte 24/7",
-      "Usuários ilimitados",
       "Consultor dedicado",
-      "Treinamento da equipe",
+      "Suporte 24/7",
+      "Formação da equipa",
+      "Acompanhamento contínuo",
     ],
     highlighted: false,
   },
@@ -58,9 +61,7 @@ const plans = [
 
 export const PricingSection = () => {
   return (
-    <section id="planos" className="py-24 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-dark-lighter/30 to-background" />
-      
+    <section id="planos" className="py-24 relative bg-muted/30">
       <div className="container mx-auto px-4 relative z-10">
         <SectionTitle
           title="Planos de Serviço"
@@ -78,27 +79,35 @@ export const PricingSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`relative rounded-2xl p-6 transition-all duration-300 hover:scale-105 ${
                 plan.highlighted
-                  ? "bg-gradient-to-b from-primary/20 to-dark-card border-2 border-primary glow-gold"
+                  ? "bg-gradient-to-b from-primary/20 to-card border-2 border-primary glow-green"
                   : "card-premium"
               }`}
             >
               {plan.highlighted && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-gold-gradient rounded-full flex items-center gap-2">
-                  <Star className="w-4 h-4 text-primary-foreground" fill="currentColor" />
-                  <span className="text-sm font-semibold text-primary-foreground">Recomendado</span>
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-green-gradient rounded-full flex items-center gap-2">
+                  <Star className="w-4 h-4 text-white" fill="currentColor" />
+                  <span className="text-sm font-semibold text-white">Recomendado</span>
                 </div>
               )}
 
               <div className="text-center mb-6">
+                <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full mb-3">
+                  {plan.format}
+                </span>
                 <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
                 <p className="text-muted-foreground text-sm mb-4">{plan.description}</p>
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-4xl font-display font-bold text-gradient-gold">
+                  <span className="text-3xl font-display font-bold text-gradient-green">
                     {plan.price}
                   </span>
-                  <span className="text-muted-foreground">{plan.currency}</span>
-                  <span className="text-muted-foreground text-sm">{plan.period}</span>
+                  {plan.currency && <span className="text-muted-foreground">{plan.currency}</span>}
+                  {plan.period && <span className="text-muted-foreground text-sm">{plan.period}</span>}
                 </div>
+                {plan.monthlyPrice && (
+                  <p className="text-sm text-muted-foreground mt-1">
+                    Pacote mensal: {plan.monthlyPrice} Kz
+                  </p>
+                )}
               </div>
 
               <ul className="space-y-3 mb-8">
@@ -112,15 +121,27 @@ export const PricingSection = () => {
                 ))}
               </ul>
 
-              <GoldButton 
+              <GreenButton 
                 variant={plan.highlighted ? "primary" : "outline"}
                 className="w-full"
               >
                 Escolher Plano
-              </GoldButton>
+              </GreenButton>
             </motion.div>
           ))}
         </div>
+
+        {/* Payment methods */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <p className="text-muted-foreground text-sm">
+            <span className="font-semibold text-foreground">Formas de pagamento:</span> Cash • Transferência bancária • TPA Multicaixa/QR • Cheques
+          </p>
+        </motion.div>
       </div>
     </section>
   );
