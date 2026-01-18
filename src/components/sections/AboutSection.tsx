@@ -104,7 +104,7 @@ export const AboutSection = () => {
             { value: 35, suffix: "+", label: "Profissionais" },
             { value: 6, label: "Departamentos" },
             { value: 100, suffix: "%", label: "Digital" },
-            { value: 18, label: "Províncias" },
+            { value: 21, label: "Províncias" },
           ].map((counter, index) => (
             <motion.div
               key={counter.label}
