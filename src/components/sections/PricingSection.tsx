@@ -8,13 +8,13 @@ import { Check, Star } from "lucide-react";
 const plans = [
   {
     name: "Plano Essencial",
-    price: "40.000",
+    price: "700.000",
     currency: "Kz",
-    period: "/sessão",
-    monthlyPrice: "144.000",
+    period: "/mês",
     description: "Ideal para pequenas empresas rurais",
     format: "Online",
     features: [
+      "Consultoria em Contabilidade Online",
       "Auditoria Financeira Online",
       "Relatórios básicos",
       "Suporte por email",
@@ -24,17 +24,16 @@ const plans = [
   },
   {
     name: "Plano Completo",
-    price: "55.000",
+    price: "1.900.000",
     currency: "Kz",
-    period: "/sessão",
-    monthlyPrice: "198.000",
+    period: "/mês",
     description: "Para empresas em crescimento",
-    format: "Presencial/Online",
+    format: "Online",
     features: [
       "Tudo do plano Essencial",
       "Planeamento Financeiro e Orçamental",
-      "Consultoria Agronómica",
-      "Formação e Capacitação",
+      "Consultoria de Gestão de Frota",
+      "Formação e Capacitação Online",
       "Suporte prioritário",
       "Consultoria mensal",
     ],
@@ -42,19 +41,18 @@ const plans = [
   },
   {
     name: "Plano Premium",
-    price: "Personalizado",
-    currency: "",
-    period: "",
-    monthlyPrice: "",
+    price: "3.000.000",
+    currency: "Kz",
+    period: "/mês",
     description: "Solução completa para grandes operações",
-    format: "Presencial",
+    format: "Online",
     features: [
       "Tudo do plano Completo",
       "Cartão VIP",
       "Auditoria trimestral",
       "Consultor dedicado",
       "Suporte 24/7",
-      "Formação da equipa",
+      "Formação da equipa online",
       "Acompanhamento contínuo",
     ],
     highlighted: false,
@@ -114,11 +112,6 @@ export const PricingSection = () => {
                   {plan.currency && <span className="text-muted-foreground">{plan.currency}</span>}
                   {plan.period && <span className="text-muted-foreground text-sm">{plan.period}</span>}
                 </div>
-                {plan.monthlyPrice && (
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Pacote mensal: {plan.monthlyPrice} Kz
-                  </p>
-                )}
               </div>
 
               <ul className="space-y-3 mb-8">
@@ -135,7 +128,7 @@ export const PricingSection = () => {
               <GreenButton 
                 variant={plan.highlighted ? "primary" : "outline"}
                 className="w-full"
-                onClick={() => setSelectedPlan({ name: plan.name, price: plan.monthlyPrice || plan.price })}
+                onClick={() => setSelectedPlan({ name: plan.name, price: plan.price })}
               >
                 Escolher Plano
               </GreenButton>
