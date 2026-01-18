@@ -51,7 +51,7 @@ export const HeroSection = () => {
             <img 
               src={logoFlam} 
               alt="FLAM Consultoria" 
-              className="h-28 md:h-36 w-auto mx-auto drop-shadow-2xl"
+              className="h-40 md:h-52 w-auto mx-auto drop-shadow-2xl"
             />
           </motion.div>
 
@@ -62,7 +62,7 @@ export const HeroSection = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm mb-8"
           >
             <Leaf size={16} className="text-white" />
-            <span className="text-sm text-white font-medium">Consultoria para o Agronegócio</span>
+            <span className="text-sm text-white font-medium">Consultoria de Contabilidade Online</span>
           </motion.div>
 
           <motion.h1
@@ -71,8 +71,8 @@ export const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-4xl md:text-5xl lg:text-7xl font-display font-bold mb-6 leading-tight text-white"
           >
-            Transformando Gestão em{" "}
-            <span className="text-white/90 underline decoration-white/30 underline-offset-8">Crescimento Sustentável</span>
+            Plantamos o Trabalho,{" "}
+            <span className="text-white/90 underline decoration-white/30 underline-offset-8">Colhemos o Sucesso</span>
           </motion.h1>
 
           <motion.p
@@ -81,8 +81,8 @@ export const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-lg md:text-xl text-white/90 mb-10 max-w-3xl mx-auto"
           >
-            Consultoria Contábil, Estratégica e Financeira Online para Empresas Rurais em Angola. 
-            Soluções digitais inovadoras para o desenvolvimento do agronegócio.
+            Consultoria de Contabilidade, Estratégica e Financeira Online para Empresas Rurais em Angola. 
+            Soluções digitais inovadoras para o desenvolvimento do agronegócio nas 21 províncias.
           </motion.p>
 
           <motion.div
@@ -110,7 +110,7 @@ export const HeroSection = () => {
             {[
               { value: "35+", label: "Profissionais" },
               { value: "100%", label: "Online" },
-              { value: "Angola", label: "Cobertura Nacional" },
+              { value: "21", label: "Províncias" },
               { value: "24/7", label: "Suporte" },
             ].map((stat, index) => (
               <motion.div

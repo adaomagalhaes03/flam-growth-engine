@@ -15,39 +15,33 @@ import {
 const services = [
   {
     icon: Calculator,
-    title: "Consultoria Contábil e Auditoria",
-    description: "Avaliação contabilística e financeira das atividades rurais com análise de riscos e relatórios especializados.",
-    features: ["Escrituração contábil", "Análise de riscos", "Relatórios especializados"]
+    title: "Consultoria em Contabilidade e Auditoria Financeira",
+    description: "Avaliação contabilística e financeira das actividades rurais com análise de riscos e relatórios especializados online.",
+    features: ["Escrituração contábil", "Auditoria compliance", "Relatórios especializados"]
   },
   {
     icon: PieChart,
-    title: "Consultoria Financeira",
-    description: "Elaboração de planos financeiros e orçamentos personalizados para o crescimento sustentável.",
+    title: "Consultoria Estratégica e Financeira",
+    description: "Elaboração de planos financeiros e orçamentos personalizados para o crescimento sustentável online.",
     features: ["Gestão de custos", "Planeamento orçamental", "Fluxo de caixa"]
   },
   {
-    icon: Leaf,
-    title: "Consultoria Agronómica",
-    description: "Planeamento estratégico para o crescimento do agronegócio com foco em sustentabilidade.",
-    features: ["Análise de produção", "Planeamento agrícola", "Sustentabilidade"]
-  },
-  {
     icon: FileText,
-    title: "Planeamento Estratégico",
-    description: "Desenvolvimento de estratégias empresariais para maximizar resultados no setor rural.",
+    title: "Consultoria de Planeamento de Gestão Rural",
+    description: "Desenvolvimento de estratégias empresariais para maximizar resultados no sector rural online.",
     features: ["Estratégias de crescimento", "Análise de mercado", "Posicionamento"]
   },
   {
     icon: Truck,
-    title: "Gestão de Frota",
-    description: "Consultoria especializada em gestão de frota para empresas de transporte rural.",
-    features: ["Controle de custos", "Manutenção preventiva", "Otimização de rotas"]
+    title: "Consultoria de Gestão de Frota",
+    description: "Consultoria especializada em gestão de frota para empresas de transporte rural online.",
+    features: ["Controlo de custos", "Manutenção preventiva", "Optimização de rotas"]
   },
   {
     icon: GraduationCap,
-    title: "Formação e Capacitação",
-    description: "Programas de formação em gestão rural para empreendedores e equipas.",
-    features: ["Workshops", "Capacitação técnica", "Acompanhamento digital"]
+    title: "Formação e Capacitação de Gestão Rural",
+    description: "Programas de formação em gestão rural para empreendedores e equipas online.",
+    features: ["Workshops online", "Capacitação técnica", "Acompanhamento digital"]
   },
 ];
 
